@@ -25,7 +25,7 @@ namespace MinesweeperExtended
         }
 
         private enum Difficulty { Beginner, Intermediate, Expert }
-        private enum GameMode { Normal, Knight, NoUp, NoVert, Swath, Pawn }
+        private enum GameMode { Normal, Knight, NoUp, NoVert, Swath, Pawn, Orth, FarOrth, Doubled, Taxicab, Horiz }
 
         // Methods
         private void LoadGame(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace MinesweeperExtended
                     {
                         new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
                         new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
-                    }; ;
+                    };
             
             switch (this.difficulty)
             {
@@ -102,6 +102,46 @@ namespace MinesweeperExtended
                     {
                         new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 0, -2 },
                         new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }
+                    };
+                    break;
+                case GameMode.Orth:
+                    mooves = new int[][]
+                    {
+                        new[] { 0, -1 }, new[] { -1, 0 },
+                        new[] { 1, 0 }, new[] { 0, 1 }
+                    };
+                    break;
+                case GameMode.FarOrth:
+                    mooves = new int[][]
+                    {
+                        new[] { 0, -1 }, new[] { -1, 0 },
+                        new[] { 1, 0 }, new[] { 0, 1 },
+                        new[] { 0, -2 }, new[] { -2, 0 },
+                        new[] { 2, 0 }, new[] { 0, 2 }
+                    };
+                    break;
+                case GameMode.Doubled:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 },
+                        new[] { 0, -1 }, new[] { -1, 0 }, new[] { 1, 0 }, new[] { 0, 1 }
+                    };
+                    break;
+                case GameMode.Taxicab:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 },
+                        new[] { 0, -1 }, new[] { -1, 0 }, new[] { 1, 0 }, new[] { 0, 1 },
+                        new[] { 0, -2 }, new[] { -2, 0 },
+                        new[] { 2, 0 }, new[] { 0, 2 }
+                    };
+                    break;
+                case GameMode.Horiz:
+                    mooves = new int[][]
+                    {
+                        new[] { -2, 0 }, new[] { -1, 0 }, new[] { 1, 0 }, new[] { 2, 0 }
                     };
                     break;
                 default:

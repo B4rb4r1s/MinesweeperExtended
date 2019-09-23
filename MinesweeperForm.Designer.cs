@@ -48,6 +48,11 @@
             this.noVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pawnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orthogonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.farOrthogonalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doubledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.taxicabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Game_button)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -173,7 +178,12 @@
             this.noUpToolStripMenuItem,
             this.noVerticalToolStripMenuItem,
             this.swathToolStripMenuItem,
-            this.pawnToolStripMenuItem});
+            this.pawnToolStripMenuItem,
+            this.orthogonalToolStripMenuItem,
+            this.farOrthogonalToolStripMenuItem,
+            this.doubledToolStripMenuItem,
+            this.taxicabToolStripMenuItem,
+            this.horizontalToolStripMenuItem});
             this.gameModeToolStripMenuItem.Name = "gameModeToolStripMenuItem";
             this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameModeToolStripMenuItem.Text = "Game mode";
@@ -226,6 +236,46 @@
             this.pawnToolStripMenuItem.Text = "Pawn";
             this.pawnToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
             // 
+            // orthogonalToolStripMenuItem
+            // 
+            this.orthogonalToolStripMenuItem.Name = "orthogonalToolStripMenuItem";
+            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orthogonalToolStripMenuItem.Tag = "Orth";
+            this.orthogonalToolStripMenuItem.Text = "Orthogonal";
+            this.orthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
+            // farOrthogonalToolStripMenuItem
+            // 
+            this.farOrthogonalToolStripMenuItem.Name = "farOrthogonalToolStripMenuItem";
+            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.farOrthogonalToolStripMenuItem.Tag = "FarOrth";
+            this.farOrthogonalToolStripMenuItem.Text = "Far orthogonal";
+            this.farOrthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
+            // doubledToolStripMenuItem
+            // 
+            this.doubledToolStripMenuItem.Name = "doubledToolStripMenuItem";
+            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doubledToolStripMenuItem.Tag = "Doubled";
+            this.doubledToolStripMenuItem.Text = "Doubled";
+            this.doubledToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
+            // taxicabToolStripMenuItem
+            // 
+            this.taxicabToolStripMenuItem.Name = "taxicabToolStripMenuItem";
+            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.taxicabToolStripMenuItem.Tag = "Taxicab";
+            this.taxicabToolStripMenuItem.Text = "Taxicab";
+            this.taxicabToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
+            // horizontalToolStripMenuItem
+            // 
+            this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.horizontalToolStripMenuItem.Tag = "Horiz";
+            this.horizontalToolStripMenuItem.Text = "Horizontal";
+            this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
             // MinesweeperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +318,11 @@
         private System.Windows.Forms.ToolStripMenuItem noVerticalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem swathToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pawnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orthogonalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem farOrthogonalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem doubledToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem taxicabToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem horizontalToolStripMenuItem;
     }
 }
 
