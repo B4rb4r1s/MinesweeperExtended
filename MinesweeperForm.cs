@@ -16,6 +16,7 @@ namespace MinesweeperExtended
     {
         // Parameters
         private Difficulty difficulty;
+        private GameMode gameMode;
         public MinesweeperForm()
         {
             InitializeComponent();
@@ -24,11 +25,18 @@ namespace MinesweeperExtended
         }
 
         private enum Difficulty { Beginner, Intermediate, Expert }
+        private enum GameMode { Normal, Knight, NoUp, NoVert, Swath, Pawn }
 
         // Methods
         private void LoadGame(object sender, EventArgs e)
         {
             int x, y, mines;
+            int[][] mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                    }; ;
+            
             switch (this.difficulty)
             {
                 case Difficulty.Beginner:
@@ -47,7 +55,60 @@ namespace MinesweeperExtended
                 default:
                     throw new InvalidOperationException("Unimplemented difficulty selected");
             }
-            this.tileGrid.LoadGrid(new Size(x, y), mines);
+
+            switch (this.gameMode)
+            {
+                case GameMode.Normal:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                    };
+                    break;
+                case GameMode.Knight:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -2 }, new[] { 1, -2 }, new[] { -2, -1 }, new[] { 2, -1 },
+                        new[] { -2, 1 }, new[] { 2, 1 }, new[] { -1, 2 }, new[] { 1, 2 }
+                    };
+                    break;
+                case GameMode.NoUp:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                    };
+                    break;
+                case GameMode.NoVert:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                    };
+                    break;
+                case GameMode.Swath:
+                    mooves = new int[][]
+                    {
+                        new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                        new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 },
+                        new[] {-2, -2}, new[] {-1, -2}, new[] {0, -2}, new[] {1, -2}, new[] {2, -2},
+                        new[] {-2, 2}, new[] {-1, 2}, new[] {0, 2}, new[] {1, 2}, new[] {2, 2},
+                        new[] {-2, -1}, new[] {-2, 0}, new[] {-2, 1},
+                        new[] {2, -1}, new[] {2, 0}, new[] {2, 1},
+                    };
+                    break;
+                case GameMode.Pawn:
+                    mooves = new int[][]
+                    {
+                        new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 0, -2 },
+                        new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }
+                    };
+                    break;
+                default:
+                    throw new InvalidOperationException("Unimplemented gamemode selected");
+            }
+
+            this.tileGrid.LoadGrid(new Size(x, y), mines, mooves);
             this.MaximumSize = this.MinimumSize = new Size(this.tileGrid.Width + 36, this.tileGrid.Height + 98);
             this.flagCounter.Text = mines.ToString();
             this.flagCounter.ForeColor = Color.Black;
@@ -68,11 +129,11 @@ namespace MinesweeperExtended
             this.difficulty = (Difficulty)Enum.Parse(typeof(Difficulty), (string)((ToolStripMenuItem)sender).Tag);
             this.LoadGame(null, null);
         }
-
-        //private void MenuStrip_Expansion_ModeChanged(object sender, EventArgs e)
-        //{
-        //    this.
-        //}
+        private void MenuStrip_Expansion_GameModeChanged(object sender, EventArgs e)
+        {
+            this.gameMode = (GameMode)Enum.Parse(typeof(GameMode), (string)((ToolStripMenuItem)sender).Tag);
+            this.LoadGame(null, null);
+        }
 
         private void TileFlagStatusChanged(object sender, TileGrid.TileFlagStatusChangedEventArgs e)
         {
@@ -136,7 +197,7 @@ namespace MinesweeperExtended
                 this.CheckForWin();
             }
 
-            internal void LoadGrid(Size gridSize, int mines)
+            internal void LoadGrid(Size gridSize, int mines, int[][] mode)
             {
                 this.minesGenerated = false;
                 this.Controls.Clear();
@@ -155,7 +216,7 @@ namespace MinesweeperExtended
 
                 foreach (Tile tile in this.Controls)
                 {
-                    tile.SetAdjacentTiles();
+                    tile.SetAdjacentTiles(mode);
                 }
             }
 
@@ -216,40 +277,40 @@ namespace MinesweeperExtended
                 // MOOVES
                 // Public
                 internal const int LENGTH = 32;
-                private static readonly int[][] adjacentCoords =
-                {
-                    new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
-                    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
-                };
-                private static readonly int[][] knightCoords =
-                {
-                    new[] {-1, -2 }, new[] { 1, -2 }, new[] { -2, -1 }, new[] { 2, -1 },
-                    new[] { -2, 1 }, new[] { 2, 1 }, new[] { -1, 2 }, new[] { 1, 2 }
-                };
-                private static readonly int[][] noUpCoords =
-                {
-                    new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
-                    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
-                };
-                private static readonly int[][] noVertCoords =
-                {
-                    new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
-                    new[] { 1, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
-                };
-                private static readonly int[][] swathCoords =
-                {
-                    new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
-                    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 },
-                    new[] {-2, -2}, new[] {-1, -2}, new[] {0, -2}, new[] {1, -2}, new[] {2, -2},
-                    new[] {-2, 2}, new[] {-1, 2}, new[] {0, 2}, new[] {1, 2}, new[] {2, 2},
-                    new[] {-2, -1}, new[] {-2, 0}, new[] {-2, 1},
-                    new[] {2, -1}, new[] {2, 0}, new[] {2, 1},
-                };
-                private static readonly int[][] pawnCoords =
-                {
-                    new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 0, -2 },
-                    new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }
-                };
+                //private static readonly int[][] adjacentCoords =
+                //{
+                //    new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                //    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                //};
+                //private static readonly int[][] knightCoords =
+                //{
+                //    new[] {-1, -2 }, new[] { 1, -2 }, new[] { -2, -1 }, new[] { 2, -1 },
+                //    new[] { -2, 1 }, new[] { 2, 1 }, new[] { -1, 2 }, new[] { 1, 2 }
+                //};
+                //private static readonly int[][] noUpCoords =
+                //{
+                //    new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
+                //    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                //};
+                //private static readonly int[][] noVertCoords =
+                //{
+                //    new[] {-1, -1}, new[] { 1, -1 }, new[] { 1, 0 },
+                //    new[] { 1, 1 }, new[] { -1, 1 }, new[] { -1, 0 }
+                //};
+                //private static readonly int[][] swathCoords =
+                //{
+                //    new[] {-1, -1}, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 1, 0 },
+                //    new[] { 1, 1 }, new[] { 0, 1 }, new[] { -1, 1 }, new[] { -1, 0 },
+                //    new[] {-2, -2}, new[] {-1, -2}, new[] {0, -2}, new[] {1, -2}, new[] {2, -2},
+                //    new[] {-2, 2}, new[] {-1, 2}, new[] {0, 2}, new[] {1, 2}, new[] {2, 2},
+                //    new[] {-2, -1}, new[] {-2, 0}, new[] {-2, 1},
+                //    new[] {2, -1}, new[] {2, 0}, new[] {2, 1},
+                //};
+                //private static readonly int[][] pawnCoords =
+                //{
+                //    new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }, new[] { 0, -2 },
+                //    new[] { -1, -1 }, new[] { 0, -1 }, new[] { 1, -1 }
+                //};
 
                 private bool flagged;
 
@@ -278,12 +339,13 @@ namespace MinesweeperExtended
                 }
 
                 // Methods
-                internal void SetAdjacentTiles()
+                internal void SetAdjacentTiles(int[][] posibleMooves)
                 {
                     TileGrid tileGrid = (TileGrid)this.Parent;
                     List<Tile> adjacentTiles = new List<Tile>(8);
 
-                    foreach (int[] adjacentCoord in adjacentCoords)
+                    foreach (int[] adjacentCoord in posibleMooves)
+                    //foreach (int[] adjacentCoord in adjacentCoords)
                     //foreach (int[] adjacentCoord in knightCoords)
                     //foreach (int[] adjacentCoord in noUpCoords)
                     //foreach (int[] adjacentCoord in noVertCoords)
