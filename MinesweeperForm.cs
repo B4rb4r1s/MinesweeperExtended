@@ -214,6 +214,7 @@ namespace MinesweeperExtended
             {
                 // Parameters
                 // MOOVES
+                // Public
                 internal const int LENGTH = 32;
                 private static readonly int[][] adjacentCoords =
                 {
