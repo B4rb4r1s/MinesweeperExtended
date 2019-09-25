@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tileGrid = new MinesweeperExtended.MinesweeperForm.TileGrid();
-            this.Game_button = new System.Windows.Forms.PictureBox();
             this.flagCounter = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuStrip_Game_Expert = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,28 +53,20 @@
             this.doubledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxicabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.Game_button)).BeginInit();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.Game_button = new System.Windows.Forms.PictureBox();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Game_button)).BeginInit();
             this.SuspendLayout();
             // 
             // tileGrid
             // 
-            this.tileGrid.Location = new System.Drawing.Point(10, 50);
+            this.tileGrid.Location = new System.Drawing.Point(12, 72);
             this.tileGrid.Name = "tileGrid";
             this.tileGrid.Size = new System.Drawing.Size(385, 323);
             this.tileGrid.TabIndex = 0;
-            // 
-            // Game_button
-            // 
-            this.Game_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Game_button.BackgroundImage = global::MinesweeperExtended.Properties.Resources.Game;
-            this.Game_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Game_button.Location = new System.Drawing.Point(249, 9);
-            this.Game_button.Name = "Game_button";
-            this.Game_button.Size = new System.Drawing.Size(35, 35);
-            this.Game_button.TabIndex = 1;
-            this.Game_button.TabStop = false;
-            this.Game_button.Click += new System.EventHandler(this.LoadGame);
             // 
             // flagCounter
             // 
@@ -82,7 +74,7 @@
             this.flagCounter.AutoSize = true;
             this.flagCounter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.flagCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.flagCounter.Location = new System.Drawing.Point(463, 5);
+            this.flagCounter.Location = new System.Drawing.Point(463, 27);
             this.flagCounter.Name = "flagCounter";
             this.flagCounter.Size = new System.Drawing.Size(2, 39);
             this.flagCounter.TabIndex = 2;
@@ -91,7 +83,8 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuStrip_Game_Expert,
-            this.menuStrip_Extension});
+            this.menuStrip_Extension,
+            this.infoToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(533, 24);
@@ -185,13 +178,13 @@
             this.taxicabToolStripMenuItem,
             this.horizontalToolStripMenuItem});
             this.gameModeToolStripMenuItem.Name = "gameModeToolStripMenuItem";
-            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.gameModeToolStripMenuItem.Text = "Game mode";
             // 
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.normalToolStripMenuItem.Tag = "Normal";
             this.normalToolStripMenuItem.Text = "Normal";
             this.normalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -199,7 +192,7 @@
             // knightToolStripMenuItem
             // 
             this.knightToolStripMenuItem.Name = "knightToolStripMenuItem";
-            this.knightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.knightToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.knightToolStripMenuItem.Tag = "Knight";
             this.knightToolStripMenuItem.Text = "Knight";
             this.knightToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -207,7 +200,7 @@
             // noUpToolStripMenuItem
             // 
             this.noUpToolStripMenuItem.Name = "noUpToolStripMenuItem";
-            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.noUpToolStripMenuItem.Tag = "NoUp";
             this.noUpToolStripMenuItem.Text = "No up";
             this.noUpToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -215,7 +208,7 @@
             // noVerticalToolStripMenuItem
             // 
             this.noVerticalToolStripMenuItem.Name = "noVerticalToolStripMenuItem";
-            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.noVerticalToolStripMenuItem.Tag = "NoVert";
             this.noVerticalToolStripMenuItem.Text = "No vertical";
             this.noVerticalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -223,7 +216,7 @@
             // swathToolStripMenuItem
             // 
             this.swathToolStripMenuItem.Name = "swathToolStripMenuItem";
-            this.swathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.swathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.swathToolStripMenuItem.Tag = "Swath";
             this.swathToolStripMenuItem.Text = "Swath";
             this.swathToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -231,7 +224,7 @@
             // pawnToolStripMenuItem
             // 
             this.pawnToolStripMenuItem.Name = "pawnToolStripMenuItem";
-            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pawnToolStripMenuItem.Tag = "Pawn";
             this.pawnToolStripMenuItem.Text = "Pawn";
             this.pawnToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -239,7 +232,7 @@
             // orthogonalToolStripMenuItem
             // 
             this.orthogonalToolStripMenuItem.Name = "orthogonalToolStripMenuItem";
-            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.orthogonalToolStripMenuItem.Tag = "Orth";
             this.orthogonalToolStripMenuItem.Text = "Orthogonal";
             this.orthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -247,7 +240,7 @@
             // farOrthogonalToolStripMenuItem
             // 
             this.farOrthogonalToolStripMenuItem.Name = "farOrthogonalToolStripMenuItem";
-            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.farOrthogonalToolStripMenuItem.Tag = "FarOrth";
             this.farOrthogonalToolStripMenuItem.Text = "Far orthogonal";
             this.farOrthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -255,7 +248,7 @@
             // doubledToolStripMenuItem
             // 
             this.doubledToolStripMenuItem.Name = "doubledToolStripMenuItem";
-            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.doubledToolStripMenuItem.Tag = "Doubled";
             this.doubledToolStripMenuItem.Text = "Doubled";
             this.doubledToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -263,7 +256,7 @@
             // taxicabToolStripMenuItem
             // 
             this.taxicabToolStripMenuItem.Name = "taxicabToolStripMenuItem";
-            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.taxicabToolStripMenuItem.Tag = "Taxicab";
             this.taxicabToolStripMenuItem.Text = "Taxicab";
             this.taxicabToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
@@ -271,16 +264,50 @@
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.horizontalToolStripMenuItem.Tag = "Horiz";
             this.horizontalToolStripMenuItem.Text = "Horizontal";
             this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 39);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "0";
+            // 
+            // Game_button
+            // 
+            this.Game_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Game_button.BackgroundImage = global::MinesweeperExtended.Properties.Resources.Game;
+            this.Game_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Game_button.Location = new System.Drawing.Point(249, 31);
+            this.Game_button.Name = "Game_button";
+            this.Game_button.Size = new System.Drawing.Size(35, 35);
+            this.Game_button.TabIndex = 1;
+            this.Game_button.TabStop = false;
+            this.Game_button.Click += new System.EventHandler(this.LoadGame);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoToolStripMenuItem.Text = "Info";
             // 
             // MinesweeperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 385);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.flagCounter);
             this.Controls.Add(this.tileGrid);
             this.Controls.Add(this.Game_button);
@@ -289,9 +316,9 @@
             this.MaximizeBox = false;
             this.Name = "MinesweeperForm";
             this.Text = "Minesweeper Extended";
-            ((System.ComponentModel.ISupportInitialize)(this.Game_button)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Game_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +350,9 @@
         private System.Windows.Forms.ToolStripMenuItem doubledToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem taxicabToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem horizontalToolStripMenuItem;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
     }
 }
 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MinesweeperForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MinesweeperForm.resx">
       <DependentUpon>MinesweeperForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +130,93 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FalseFlag.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\21_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\23_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\13_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\18_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19_Tile.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Orth.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Pawn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Swath.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Taxicab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Doubled.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_FarOrth.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Horiz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Knight.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_Normal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_NoUp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_NoVert.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

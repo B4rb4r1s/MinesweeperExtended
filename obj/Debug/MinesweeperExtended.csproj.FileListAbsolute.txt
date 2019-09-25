@@ -8,3 +8,4 @@ C:\Users\vgoka\source\repos\MinesweeperExtended\MinesweeperExtended\obj\Debug\Mi
 C:\Users\vgoka\source\repos\MinesweeperExtended\MinesweeperExtended\obj\Debug\MinesweeperExtended.csproj.CoreCompileInputs.cache
 C:\Users\vgoka\source\repos\MinesweeperExtended\MinesweeperExtended\obj\Debug\MinesweeperExtended.exe
 C:\Users\vgoka\source\repos\MinesweeperExtended\MinesweeperExtended\obj\Debug\MinesweeperExtended.pdb
+C:\Users\vgoka\source\repos\MinesweeperExtended\MinesweeperExtended\obj\Debug\MinesweeperExtended.InfoForm.resources

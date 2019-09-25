@@ -149,7 +149,7 @@ namespace MinesweeperExtended
             }
 
             this.tileGrid.LoadGrid(new Size(x, y), mines, mooves);
-            this.MaximumSize = this.MinimumSize = new Size(this.tileGrid.Width + 36, this.tileGrid.Height + 98);
+            this.MaximumSize = this.MinimumSize = new Size(this.tileGrid.Width + 40, this.tileGrid.Height + 123);
             this.flagCounter.Text = mines.ToString();
             this.flagCounter.ForeColor = Color.Black;
         }
@@ -260,6 +260,7 @@ namespace MinesweeperExtended
                 }
             }
 
+            //
             private void DisableTiles(bool gameLost)
             {
                 foreach (Tile tile in this.Controls)
@@ -281,6 +282,7 @@ namespace MinesweeperExtended
                 }
                 MessageBox.Show("Congratulations! You solved the game!","Game Solved", MessageBoxButtons.OK);
                 this.DisableTiles(false);
+                
             }
 
             private void GenerateMines(Tile safeTile)
