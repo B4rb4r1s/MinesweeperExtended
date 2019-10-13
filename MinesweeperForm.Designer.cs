@@ -53,10 +53,10 @@
             this.doubledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.taxicabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.Game_button = new System.Windows.Forms.PictureBox();
-            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Game_button)).BeginInit();
             this.SuspendLayout();
@@ -178,96 +178,104 @@
             this.taxicabToolStripMenuItem,
             this.horizontalToolStripMenuItem});
             this.gameModeToolStripMenuItem.Name = "gameModeToolStripMenuItem";
-            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.gameModeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameModeToolStripMenuItem.Text = "Game mode";
             // 
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.normalToolStripMenuItem.Tag = "Normal";
             this.normalToolStripMenuItem.Text = "Normal";
-            this.normalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.normalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // knightToolStripMenuItem
             // 
             this.knightToolStripMenuItem.Name = "knightToolStripMenuItem";
-            this.knightToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.knightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.knightToolStripMenuItem.Tag = "Knight";
             this.knightToolStripMenuItem.Text = "Knight";
-            this.knightToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.knightToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // noUpToolStripMenuItem
             // 
             this.noUpToolStripMenuItem.Name = "noUpToolStripMenuItem";
-            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noUpToolStripMenuItem.Tag = "NoUp";
             this.noUpToolStripMenuItem.Text = "No up";
-            this.noUpToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.noUpToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // noVerticalToolStripMenuItem
             // 
             this.noVerticalToolStripMenuItem.Name = "noVerticalToolStripMenuItem";
-            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.noVerticalToolStripMenuItem.Tag = "NoVert";
             this.noVerticalToolStripMenuItem.Text = "No vertical";
-            this.noVerticalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.noVerticalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // swathToolStripMenuItem
             // 
             this.swathToolStripMenuItem.Name = "swathToolStripMenuItem";
-            this.swathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.swathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.swathToolStripMenuItem.Tag = "Swath";
-            this.swathToolStripMenuItem.Text = "Swath";
-            this.swathToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.swathToolStripMenuItem.Text = "Swarm";
+            this.swathToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // pawnToolStripMenuItem
             // 
             this.pawnToolStripMenuItem.Name = "pawnToolStripMenuItem";
-            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pawnToolStripMenuItem.Tag = "Pawn";
             this.pawnToolStripMenuItem.Text = "Pawn";
-            this.pawnToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.pawnToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // orthogonalToolStripMenuItem
             // 
             this.orthogonalToolStripMenuItem.Name = "orthogonalToolStripMenuItem";
-            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orthogonalToolStripMenuItem.Tag = "Orth";
             this.orthogonalToolStripMenuItem.Text = "Orthogonal";
-            this.orthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.orthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // farOrthogonalToolStripMenuItem
             // 
             this.farOrthogonalToolStripMenuItem.Name = "farOrthogonalToolStripMenuItem";
-            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.farOrthogonalToolStripMenuItem.Tag = "FarOrth";
             this.farOrthogonalToolStripMenuItem.Text = "Far orthogonal";
-            this.farOrthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.farOrthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // doubledToolStripMenuItem
             // 
             this.doubledToolStripMenuItem.Name = "doubledToolStripMenuItem";
-            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.doubledToolStripMenuItem.Tag = "Doubled";
             this.doubledToolStripMenuItem.Text = "Doubled";
-            this.doubledToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.doubledToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // taxicabToolStripMenuItem
             // 
             this.taxicabToolStripMenuItem.Name = "taxicabToolStripMenuItem";
-            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.taxicabToolStripMenuItem.Tag = "Taxicab";
-            this.taxicabToolStripMenuItem.Text = "Taxicab";
-            this.taxicabToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.taxicabToolStripMenuItem.Text = "Diamond";
+            this.taxicabToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
             // 
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.horizontalToolStripMenuItem.Tag = "Horiz";
             this.horizontalToolStripMenuItem.Text = "Horizontal";
-            this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Expansion_GameModeChanged);
+            this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.InfoToolStripMenuItem_Click);
             // 
             // timer
             // 
@@ -295,12 +303,6 @@
             this.Game_button.TabIndex = 1;
             this.Game_button.TabStop = false;
             this.Game_button.Click += new System.EventHandler(this.LoadGame);
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.infoToolStripMenuItem.Text = "Info";
             // 
             // MinesweeperForm
             // 

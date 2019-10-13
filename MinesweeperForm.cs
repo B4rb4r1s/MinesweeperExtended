@@ -169,7 +169,7 @@ namespace MinesweeperExtended
             this.difficulty = (Difficulty)Enum.Parse(typeof(Difficulty), (string)((ToolStripMenuItem)sender).Tag);
             this.LoadGame(null, null);
         }
-        private void MenuStrip_Expansion_GameModeChanged(object sender, EventArgs e)
+        private void MenuStrip_Extansion_GameModeChanged(object sender, EventArgs e)
         {
             this.gameMode = (GameMode)Enum.Parse(typeof(GameMode), (string)((ToolStripMenuItem)sender).Tag);
             this.LoadGame(null, null);
@@ -179,6 +179,12 @@ namespace MinesweeperExtended
         {
             this.flagCounter.Text = e.Flags.ToString();
             this.flagCounter.ForeColor = e.LabelColor;
+        }
+
+        private void InfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InfoForm infoForm = new InfoForm();
+            infoForm.Show();
         }
 
         // Classes
