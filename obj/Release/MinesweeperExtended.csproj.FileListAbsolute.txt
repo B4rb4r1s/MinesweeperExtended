@@ -1,0 +1,10 @@
+C:\Users\vgoka\source\repos\MinesweeperExtended\bin\Release\MinesweeperExtended.exe.config
+C:\Users\vgoka\source\repos\MinesweeperExtended\bin\Release\MinesweeperExtended.exe
+C:\Users\vgoka\source\repos\MinesweeperExtended\bin\Release\MinesweeperExtended.pdb
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.csprojAssemblyReference.cache
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.InfoForm.resources
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.MinesweeperForm.resources
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.Properties.Resources.resources
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.csproj.GenerateResource.cache
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.exe
+C:\Users\vgoka\source\repos\MinesweeperExtended\obj\Release\MinesweeperExtended.pdb

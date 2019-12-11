@@ -278,6 +278,7 @@ namespace MinesweeperExtended
                             tile.Flagged && !tile.Mined ? Resources.FalseFlag : tile.Image;
                     }
                 }
+                if (gameLost) MessageBox.Show("You lost! Better luck next time!\n 1.41s\nSCORE - 46", "Game Lost", MessageBoxButtons.OK);
             }
 
             private void CheckForWin()
@@ -286,7 +287,7 @@ namespace MinesweeperExtended
                 {
                     return;
                 }
-                MessageBox.Show("Congratulations! You solved the game!","Game Solved", MessageBoxButtons.OK);
+                MessageBox.Show("Congratulations! You solved the game!\n 25.48s\nSCORE - 5572","Game Solved", MessageBoxButtons.OK);
                 this.DisableTiles(false);
                 
             }
@@ -386,7 +387,6 @@ namespace MinesweeperExtended
                     }
                 }
 
-                // Methods
                 internal void SetAdjacentTiles(int[][] posibleMooves)
                 {
                     TileGrid tileGrid = (TileGrid)this.Parent;
@@ -411,6 +411,7 @@ namespace MinesweeperExtended
                 }
 
                 private int AdjacentMines => this.AdjacentTiles.Count(tile => tile.Mined);
+                private int AdjacentFlags => this.AdjacentTiles.Count(tile => tile.Flagged);
 
                 internal void TestAdjacentTiles()
                 {

@@ -160,8 +160,8 @@
             this.menuStrip_Extension.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameModeToolStripMenuItem});
             this.menuStrip_Extension.Name = "menuStrip_Extension";
-            this.menuStrip_Extension.Size = new System.Drawing.Size(70, 20);
-            this.menuStrip_Extension.Text = "Extension";
+            this.menuStrip_Extension.Size = new System.Drawing.Size(73, 20);
+            this.menuStrip_Extension.Text = "Expension";
             // 
             // gameModeToolStripMenuItem
             // 
@@ -184,7 +184,7 @@
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.normalToolStripMenuItem.Tag = "Normal";
             this.normalToolStripMenuItem.Text = "Normal";
             this.normalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -192,7 +192,7 @@
             // knightToolStripMenuItem
             // 
             this.knightToolStripMenuItem.Name = "knightToolStripMenuItem";
-            this.knightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.knightToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.knightToolStripMenuItem.Tag = "Knight";
             this.knightToolStripMenuItem.Text = "Knight";
             this.knightToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -200,7 +200,7 @@
             // noUpToolStripMenuItem
             // 
             this.noUpToolStripMenuItem.Name = "noUpToolStripMenuItem";
-            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.noUpToolStripMenuItem.Tag = "NoUp";
             this.noUpToolStripMenuItem.Text = "No up";
             this.noUpToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -208,7 +208,7 @@
             // noVerticalToolStripMenuItem
             // 
             this.noVerticalToolStripMenuItem.Name = "noVerticalToolStripMenuItem";
-            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.noVerticalToolStripMenuItem.Tag = "NoVert";
             this.noVerticalToolStripMenuItem.Text = "No vertical";
             this.noVerticalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -216,7 +216,7 @@
             // swathToolStripMenuItem
             // 
             this.swathToolStripMenuItem.Name = "swathToolStripMenuItem";
-            this.swathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.swathToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.swathToolStripMenuItem.Tag = "Swath";
             this.swathToolStripMenuItem.Text = "Swarm";
             this.swathToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -224,7 +224,7 @@
             // pawnToolStripMenuItem
             // 
             this.pawnToolStripMenuItem.Name = "pawnToolStripMenuItem";
-            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pawnToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pawnToolStripMenuItem.Tag = "Pawn";
             this.pawnToolStripMenuItem.Text = "Pawn";
             this.pawnToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -232,7 +232,7 @@
             // orthogonalToolStripMenuItem
             // 
             this.orthogonalToolStripMenuItem.Name = "orthogonalToolStripMenuItem";
-            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.orthogonalToolStripMenuItem.Tag = "Orth";
             this.orthogonalToolStripMenuItem.Text = "Orthogonal";
             this.orthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -240,7 +240,7 @@
             // farOrthogonalToolStripMenuItem
             // 
             this.farOrthogonalToolStripMenuItem.Name = "farOrthogonalToolStripMenuItem";
-            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.farOrthogonalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.farOrthogonalToolStripMenuItem.Tag = "FarOrth";
             this.farOrthogonalToolStripMenuItem.Text = "Far orthogonal";
             this.farOrthogonalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -248,7 +248,7 @@
             // doubledToolStripMenuItem
             // 
             this.doubledToolStripMenuItem.Name = "doubledToolStripMenuItem";
-            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.doubledToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.doubledToolStripMenuItem.Tag = "Doubled";
             this.doubledToolStripMenuItem.Text = "Doubled";
             this.doubledToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -256,7 +256,7 @@
             // taxicabToolStripMenuItem
             // 
             this.taxicabToolStripMenuItem.Name = "taxicabToolStripMenuItem";
-            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.taxicabToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.taxicabToolStripMenuItem.Tag = "Taxicab";
             this.taxicabToolStripMenuItem.Text = "Diamond";
             this.taxicabToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
@@ -264,7 +264,7 @@
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.horizontalToolStripMenuItem.Tag = "Horiz";
             this.horizontalToolStripMenuItem.Text = "Horizontal";
             this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.MenuStrip_Extansion_GameModeChanged);
