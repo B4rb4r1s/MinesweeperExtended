@@ -1,1 +1,2 @@
 # MinesweeperExtended
+bin -> relize -> .exe
