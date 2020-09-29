@@ -1,2 +1,2 @@
 # MinesweeperExtended
-bin -> relize -> .exe
+bin -> release -> .exe
